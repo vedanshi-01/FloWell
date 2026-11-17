@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLOWELL - Nutrition & Healthy Foods for Menstrual Health</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated Background Elements: 5 Continuous Floating Translucent Orbs -->
+  <div class="bg-orb-container" aria-hidden="true">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-orb orb-4"></div>
+    <div class="bg-orb orb-5"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+      <div class="nav-left">
+        <a href="index.html" class="brand-mini">FloWell</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Dashboard</a>
+          <a href="dos-donts.html" class="nav-link">Do’s & Don’ts</a>
+          <a href="exercises.html" class="nav-link">Exercises</a>
+          <a href="nutrition.html" class="nav-link active">Nutrition</a>
+          <a href="mira.html" class="nav-link">Chat with Mira</a>
+        </div>
+      </div>
+      <div class="user-status">
+        <div class="user-badge" id="navUserBadge" onclick="openAvatarModal()" title="Click to customize your avatar">
+          <span class="user-avatar-badge" id="userAvatarEmoji">🌸</span>
+          <span id="userNameText">Demo Guest</span>
+          <span class="avatar-edit-hint" aria-hidden="true">✎</span>
+        </div>
+        <button class="btn-nav-logout" onclick="handleLogout()">Log Out</button>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+      <h1 class="flowell-title">FLOWELL</h1>
+      <p>Nourishing foods, balanced nutrients, and soothing teas for every phase of your cycle</p>
+    </header>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <span class="page-hero-badge">Cycle Nutrition</span>
+      <h2>Nutrition & Healthy Foods for Menstrual Health</h2>
+      <p>Nourishing your body during your menstrual cycle replenishes essential iron lost through bleeding, supplies magnesium to relax uterine smooth muscles, and provides steady energy to stabilize moods and hormones.</p>
+      <div class="disclaimer-badge" style="margin-bottom: 14px;">
+        ⚠️ <strong>Nutritional Guidance:</strong> These recommendations focus on wholesome, accessible foods and comforting dietary habits. They are intended for educational wellness support, not to treat clinical deficiencies or replace medical advice.
+      </div>
+      <div>
+        <a href="index.html" class="back-home-link">← Back to Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <div class="filter-bar" id="nutritionFilters">
+      <button type="button" class="filter-pill active" onclick="filterNutrition('all')">All Foods (16)</button>
+      <button type="button" class="filter-pill" onclick="filterNutrition('iron')">Iron-Rich</button>
+      <button type="button" class="filter-pill" onclick="filterNutrition('protein')">Protein Sources</button>
+      <button type="button" class="filter-pill" onclick="filterNutrition('fruits-vegetables')">Fruits & Veggies</button>
+      <button type="button" class="filter-pill" onclick="filterNutrition('calcium-magnesium')">Calcium & Magnesium</button>
+      <button type="button" class="filter-pill" onclick="filterNutrition('hydration')">Hydration & Teas</button>
+      <button type="button" class="filter-pill" onclick="filterNutrition('balanced-meals')">Balanced Meals</button>
+    </div>
+
+    <!-- Main Content Grid: 16 Comprehensive Nutrition Cards -->
+    <main class="container">
+      <div class="items-grid" id="nutritionGrid">
+
+        <!-- 1. Moong & Toor Dal Soups -->
+        <article class="item-card" data-category="protein">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Moong & Toor Dal (Lentil Soups)</h3>
+            </div>
+            <span class="category-tag">Protein Sources</span>
+          </div>
+          <p class="item-desc">Light, warm, and exceptionally easy to digest. Yellow split moong and toor dal provide bioavailable plant protein and folate without stressing a sluggish menstrual digestive system.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🌱 Key Nutrients: Plant Protein, Folate, Iron</span>
+          </div>
+          <div class="serving-idea">🍲 <strong>Serving Idea:</strong> Enjoy a hot bowl tempered with cumin seeds, a pinch of hing (asafoetida), and half a teaspoon of pure ghee alongside warm brown rice or soft roti.</div>
+        </article>
+
+        <!-- 2. Chickpea Chaat & Curry (Chole) -->
+        <article class="item-card" data-category="protein">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Chickpea Chaat & Curry (Chole)</h3>
+            </div>
+            <span class="category-tag">Protein Sources</span>
+          </div>
+          <p class="item-desc">Chickpeas provide sustained complex carbohydrates and essential zinc. Zinc helps regulate prostaglandins to reduce inflammation, while complex carbs stabilize blood sugar and prevent mood swings.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">💪 Key Nutrients: Plant Protein, Zinc, Complex Carbs</span>
+          </div>
+          <div class="serving-idea">🥗 <strong>Serving Idea:</strong> Toss boiled chickpeas with diced cucumber, tomatoes, a squeeze of fresh lemon juice, roasted jeera, and fresh coriander for a nourishing snack.</div>
+        </article>
+
+        <!-- 3. Rajma (Red Kidney Beans) -->
+        <article class="item-card" data-category="protein">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Rajma (Red Kidney Beans)</h3>
+            </div>
+            <span class="category-tag">Protein Sources</span>
+          </div>
+          <p class="item-desc">A comforting, mineral-dense staple packed with non-heme iron and magnesium. Helps restore hemoglobin levels while relaxing contracted uterine muscles during heavy flow days.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🩸 Key Nutrients: Dietary Iron, Magnesium, Fiber</span>
+          </div>
+          <div class="serving-idea">🍛 <strong>Serving Idea:</strong> Slow-simmered rajma curry cooked with fresh tomatoes, ginger, and mild spices, served warm with a portion of steamed rice or whole wheat chapati.</div>
+        </article>
+
+        <!-- 4. Palak & Methi (Spinach & Fenugreek Greens) -->
+        <article class="item-card" data-category="iron">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Palak & Methi (Spinach & Fenugreek)</h3>
+            </div>
+            <span class="category-tag">Iron-Rich</span>
+          </div>
+          <p class="item-desc">Dark leafy greens are foundational for counteracting menstrual blood loss and preventing mid-cycle fatigue, brain fog, and low hemoglobin levels.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🥬 Key Nutrients: Non-Heme Iron, Vitamin K, Folate</span>
+          </div>
+          <div class="serving-idea">🍋 <strong>Serving Idea:</strong> Sauté lightly with minced garlic and always finish with fresh lemon juice—vitamin C doubles non-heme plant iron absorption in your gut!</div>
+        </article>
+
+        <!-- 5. Beetroot & Carrot Salad -->
+        <article class="item-card" data-category="iron">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Beetroot & Carrot Salad</h3>
+            </div>
+            <span class="category-tag">Iron-Rich</span>
+          </div>
+          <p class="item-desc">Naturally rich in plant iron, dietary nitrates, and beta-carotene. Beetroots promote microvascular circulation, boost cellular oxygenation, and support hepatic estrogen clearance.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🌿 Key Nutrients: Iron, Dietary Nitrates, Vitamin A</span>
+          </div>
+          <div class="serving-idea">🥗 <strong>Serving Idea:</strong> Grate fresh beetroot and carrots together, add fresh mint, roasted pumpkin seeds, and a light dressing of lemon juice and Himalayan pink salt.</div>
+        </article>
+
+        <!-- 6. Curd & Spiced Chaas (Buttermilk) -->
+        <article class="item-card" data-category="calcium-magnesium">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Curd & Spiced Chaas (Buttermilk)</h3>
+            </div>
+            <span class="category-tag">Calcium & Magnesium</span>
+          </div>
+          <p class="item-desc">Calcium helps suppress excess prostaglandin synthesis to calm painful uterine cramping, while live probiotics alleviate hormonal bloating, indigestion, and sluggish bowels.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🥛 Key Nutrients: Bioavailable Calcium, Probiotics, B12</span>
+          </div>
+          <div class="serving-idea">🧂 <strong>Serving Idea:</strong> Whisk fresh homemade curd with cool water, roasted cumin powder, black salt, and crushed mint for a deeply refreshing post-lunch digestive tonic.</div>
+        </article>
+
+        <!-- 7. Fresh Paneer (Cottage Cheese) -->
+        <article class="item-card" data-category="calcium-magnesium">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Fresh Paneer (Cottage Cheese)</h3>
+            </div>
+            <span class="category-tag">Calcium & Magnesium</span>
+          </div>
+          <p class="item-desc">A concentrated source of calcium, phosphorus, and slow-digesting casein protein that curbs intense cravings, stabilizes satiety, and prevents sudden blood sugar crashes.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🧀 Key Nutrients: Complete Protein, Calcium, Phosphorus</span>
+          </div>
+          <div class="serving-idea">🧄 <strong>Serving Idea:</strong> Lightly pan-sear paneer cubes with turmeric and black pepper, or toss into a warm paneer bhurji with onions, tomatoes, and whole wheat rotis.</div>
+        </article>
+
+        <!-- 8. Boiled Farm Eggs -->
+        <article class="item-card" data-category="protein">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Boiled Farm Eggs</h3>
+            </div>
+            <span class="category-tag">Protein Sources</span>
+          </div>
+          <p class="item-desc">A complete protein source containing all 9 essential amino acids, choline for liver hormone clearance, vitamin D, and heme iron that is rapidly absorbed by red blood cells.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🥚 Key Nutrients: Complete Protein, Choline, Vitamin D</span>
+          </div>
+          <div class="serving-idea">🍳 <strong>Serving Idea:</strong> Enjoy 1 to 2 boiled eggs sprinkled with black pepper and pink salt alongside avocado toast or steamed greens for an energizing breakfast.</div>
+        </article>
+
+        <!-- 9. Fresh Pomegranate (Anar) -->
+        <article class="item-card" data-category="fruits-vegetables">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Fresh Pomegranate (Anar)</h3>
+            </div>
+            <span class="category-tag">Fruits & Veggies</span>
+          </div>
+          <p class="item-desc">Rich in punicalagins, polyphenols, and vitamin C. Helps neutralize inflammatory oxidative stress, protects cardiovascular capillaries, and promotes healthy blood building.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🫐 Key Nutrients: Polyphenols, Vitamin C, Potassium</span>
+          </div>
+          <div class="serving-idea">🥣 <strong>Serving Idea:</strong> Sprinkle juicy ruby-red pomegranate arils over morning oatmeal, homemade chaas, or enjoy a fresh bowl as a mid-morning energy boost.</div>
+        </article>
+
+        <!-- 10. Bananas & Sweet Papaya -->
+        <article class="item-card" data-category="fruits-vegetables">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Bananas & Sweet Papaya</h3>
+            </div>
+            <span class="category-tag">Fruits & Veggies</span>
+          </div>
+          <p class="item-desc">Potassium naturally flushes out excess water retention and reduces menstrual puffiness, while vitamin B6 promotes serotonin synthesis and ripe papaya enzymes ease cramping.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🍌 Key Nutrients: Potassium, Vitamin B6, Papain</span>
+          </div>
+          <div class="serving-idea">🍽️ <strong>Serving Idea:</strong> Slice a ripe banana with peanut butter on multigrain toast, or enjoy a bowl of chilled sweet papaya cubes between main meals.</div>
+        </article>
+
+        <!-- 11. Roasted Pumpkin & Sesame Seeds (Til) -->
+        <article class="item-card" data-category="calcium-magnesium">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Roasted Pumpkin & Sesame Seeds (Til)</h3>
+            </div>
+            <span class="category-tag">Calcium & Magnesium</span>
+          </div>
+          <p class="item-desc">Pumpkin seeds are among nature's highest dietary sources of magnesium to relax contracted uterine muscles, while sesame seeds deliver concentrated plant calcium and zinc.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🌻 Key Nutrients: Magnesium, Zinc, Lignans, Calcium</span>
+          </div>
+          <div class="serving-idea">✨ <strong>Serving Idea:</strong> Dry-roast pumpkin seeds with a pinch of sea salt for a crunchy desk snack, or enjoy traditional homemade til-gur ladoos in moderation.</div>
+        </article>
+
+        <!-- 12. Soaked Almonds & Walnuts -->
+        <article class="item-card" data-category="calcium-magnesium">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Soaked Almonds & Walnuts</h3>
+            </div>
+            <span class="category-tag">Calcium & Magnesium</span>
+          </div>
+          <p class="item-desc">Plant-based omega-3 fatty acids and vitamin E down-regulate inflammatory prostaglandins, effectively reducing the throbbing intensity of menstrual cramps.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🌰 Key Nutrients: Vitamin E, ALA Omega-3s, Magnesium</span>
+          </div>
+          <div class="serving-idea">💧 <strong>Serving Idea:</strong> Soak 5 to 6 almonds overnight, peel in the morning, and eat alongside 2 walnut halves before having morning tea or breakfast.</div>
+        </article>
+
+        <!-- 13. Tender Coconut Water (Nariyal Pani) -->
+        <article class="item-card" data-category="hydration">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Tender Coconut Water (Nariyal Pani)</h3>
+            </div>
+            <span class="category-tag">Hydration & Teas</span>
+          </div>
+          <p class="item-desc">Nature's purest electrolyte beverage. Packed with natural potassium, magnesium, and bioavailable fluid to quickly combat period dehydration, fatigue, and headaches.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🥥 Key Nutrients: Natural Potassium, Magnesium, Electrolytes</span>
+          </div>
+          <div class="serving-idea">🌴 <strong>Serving Idea:</strong> Drink fresh coconut water at room temperature in the late morning, especially during heavy flow days when minerals deplete.</div>
+        </article>
+
+        <!-- 14. Warm Ginger & Tulsi Tea -->
+        <article class="item-card" data-category="hydration">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Warm Ginger & Tulsi Tea</h3>
+            </div>
+            <span class="category-tag">Hydration & Teas</span>
+          </div>
+          <p class="item-desc">Active gingerols in fresh ginger inhibit the cyclooxygenase enzyme pathway, clinically demonstrating cramp relief comparable to mild over-the-counter pain relievers.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🫖 Key Nutrients: Gingerols, Eugenol, Anti-Inflammatory Oils</span>
+          </div>
+          <div class="serving-idea">🍯 <strong>Serving Idea:</strong> Crush fresh ginger root and tulsi leaves into boiling water, simmer for 5 minutes, strain into a mug, and add a teaspoon of honey.</div>
+        </article>
+
+        <!-- 15. Chamomile & Peppermint Tea -->
+        <article class="item-card" data-category="hydration">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Chamomile & Peppermint Tea</h3>
+            </div>
+            <span class="category-tag">Hydration & Teas</span>
+          </div>
+          <p class="item-desc">Chamomile delivers apigenin to soothe nervous tension and invite deep sleep, while peppermint's natural menthol relaxes smooth intestinal muscles to ease menstrual gas and bloating.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🌼 Key Nutrients: Apigenin, Menthol, Antispasmodic Bioflavonoids</span>
+          </div>
+          <div class="serving-idea">🌙 <strong>Serving Idea:</strong> Steep a warm cup 30 to 45 minutes before bedtime to unwind your pelvic nerves and prepare for deep restorative rest.</div>
+        </article>
+
+        <!-- 16. Vegetable Moong Dal Khichdi -->
+        <article class="item-card" data-category="balanced-meals">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Vegetable Moong Dal Khichdi</h3>
+            </div>
+            <span class="category-tag">Balanced Meals</span>
+          </div>
+          <p class="item-desc">The quintessential Ayurvedic comfort food: provides a complete amino acid profile, is exceptionally gentle on delicate digestive tracts, and provides steady restorative warmth.</p>
+          <div class="meta-pill-row">
+            <span class="nutrient-highlight">🍲 Key Nutrients: Complete Protein, Complex Carbs, Butyrate</span>
+          </div>
+          <div class="serving-idea">🥄 <strong>Serving Idea:</strong> Prepare soft khichdi with split yellow moong, carrots, peas, and mild turmeric; finish with 1 teaspoon of warm A2 desi ghee and fresh curd.</div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Corrected Official Footer -->
+    <footer>Made with ♡ by Vedanshi | © 2026 FloWell</footer>
+  </div>
+
+  <!-- Avatar Customization Modal -->
+  <div class="avatar-modal-backdrop" id="avatarModal" onclick="handleModalBackdropClick(event)">
+    <div class="avatar-modal-card">
+      <h3>Personalize Your Avatar</h3>
+      <p>Select an emoji to represent you across FloWell:</p>
+      <div class="avatar-grid">
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌸')" title="Cherry Blossom">🌸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🦋')" title="Butterfly">🦋</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌷')" title="Tulip">🌷</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🐰')" title="Bunny">🐰</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌙')" title="Crescent Moon">🌙</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🎀')" title="Ribbon">🎀</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🧸')" title="Teddy Bear">🧸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('✨')" title="Sparkles">✨</button>
+      </div>
+      <button type="button" class="btn-close-modal" onclick="closeAvatarModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script type="module" src="firebase-config.js"></script>
+  <script>
+    requireAuth();
+
+    // Vanilla JavaScript Category Filtering Logic
+    function filterNutrition(category) {
+      // Update active pill button
+      const pills = document.querySelectorAll("#nutritionFilters .filter-pill");
+      pills.forEach(pill => pill.classList.remove("active"));
+      event.target.classList.add("active");
+
+      // Filter card visibility
+      const cards = document.querySelectorAll("#nutritionGrid .item-card");
+      cards.forEach(card => {
+        if (category === "all" || card.getAttribute("data-category") === category) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

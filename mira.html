@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLOWELL - Chat with Mira, Your Period Companion</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated Background Elements: 5 Continuous Floating Translucent Orbs -->
+  <div class="bg-orb-container" aria-hidden="true">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-orb orb-4"></div>
+    <div class="bg-orb orb-5"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+      <div class="nav-left">
+        <a href="index.html" class="brand-mini">FloWell</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Dashboard</a>
+          <a href="dos-donts.html" class="nav-link">Do’s & Don’ts</a>
+          <a href="exercises.html" class="nav-link">Exercises</a>
+          <a href="nutrition.html" class="nav-link">Nutrition</a>
+          <a href="mira.html" class="nav-link active">Chat with Mira</a>
+        </div>
+      </div>
+      <div class="user-status">
+        <div class="user-badge" id="navUserBadge" onclick="openAvatarModal()" title="Click to customize your avatar">
+          <span class="user-avatar-badge" id="userAvatarEmoji">🌸</span>
+          <span id="userNameText">Demo Guest</span>
+          <span class="avatar-edit-hint" aria-hidden="true">✎</span>
+        </div>
+        <button class="btn-nav-logout" onclick="handleLogout()">Log Out</button>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+      <h1 class="flowell-title">FLOWELL</h1>
+      <p>Your empathetic period companion for comfort guidance, symptom support, and cycle questions</p>
+    </header>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <span class="page-hero-badge">AI Wellness Companion</span>
+      <h2>Chat with Mira</h2>
+      <p>Have questions about cramps, cycle phases, nourishing foods, or soothing stretches? Mira is here with calm, research-informed guidance whenever you need comfort.</p>
+      <div class="disclaimer-badge" style="margin-bottom: 14px;">
+        ⚠️ <strong>Medical Disclaimer:</strong> Mira is an empathetic educational guide designed to provide supportive lifestyle and comfort suggestions. Mira is not a medical professional, does not provide medical diagnoses or prescriptions, and is not a substitute for clinical healthcare advice. For severe pain, atypical bleeding, or medical concerns, please consult a physician.
+      </div>
+      <div>
+        <a href="index.html" class="back-home-link">← Back to Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Main Dedicated Chat Container -->
+    <main class="container chat-page-container">
+      <div class="card" style="padding: 24px;">
+        <!-- Quick Prompt Chips -->
+        <div class="chat-suggestions" aria-label="Suggested questions">
+          <button type="button" class="chip-btn" onclick="sendQuickPrompt('Cramp relief tips')">🌸 Cramp Relief</button>
+          <button type="button" class="chip-btn" onclick="sendQuickPrompt('Healthy food for periods')">🥗 Food & Nutrition</button>
+          <button type="button" class="chip-btn" onclick="sendQuickPrompt('Safe exercises for cramps')">🧘‍♀️ Safe Exercises</button>
+          <button type="button" class="chip-btn" onclick="sendQuickPrompt('Why is my period irregular?')">🩺 Irregular Cycle Info</button>
+          <button type="button" class="chip-btn" onclick="sendQuickPrompt('How does heat help cramps?')">🔥 Heat Therapy</button>
+        </div>
+
+        <!-- Chat History Scrollbox -->
+        <div id="chatbox" class="chatbox-dedicated" role="log" aria-live="polite">
+          <div class="message bot">
+            👋 <strong>Hi! I'm Mira, your FloWell period companion.</strong><br>
+            I'm here to offer gentle, evidence-based suggestions for cycle comfort, cramp easing, soothing teas, and restorative movement.<br><br>
+            <em>How are you feeling today? Tap any of the suggestion chips above or type your question below!</em>
+          </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <div class="chat-controls">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Ask Mira about cramps, foods, mood, or exercises..."
+            aria-label="Message to Mira"
+            autocomplete="off"
+          />
+          <button type="button" class="btn-primary" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Corrected Official Footer -->
+    <footer>Made with ♡ by Vedanshi | © 2026 FloWell</footer>
+  </div>
+
+  <!-- Avatar Customization Modal -->
+  <div class="avatar-modal-backdrop" id="avatarModal" onclick="handleModalBackdropClick(event)">
+    <div class="avatar-modal-card">
+      <h3>Personalize Your Avatar</h3>
+      <p>Select an emoji to represent you across FloWell:</p>
+      <div class="avatar-grid">
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌸')" title="Cherry Blossom">🌸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🦋')" title="Butterfly">🦋</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌷')" title="Tulip">🌷</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🐰')" title="Bunny">🐰</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌙')" title="Crescent Moon">🌙</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🎀')" title="Ribbon">🎀</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🧸')" title="Teddy Bear">🧸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('✨')" title="Sparkles">✨</button>
+      </div>
+      <button type="button" class="btn-close-modal" onclick="closeAvatarModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script>
+    requireAuth();
+  </script>
+  <script type="module" src="firebase-config.js"></script>
+</body>
+</html>

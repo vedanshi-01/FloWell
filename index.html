@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLOWELL - Menstrual Health & Period Tracker Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated Background Elements: 5 Continuous Floating Translucent Orbs -->
+  <div class="bg-orb-container" aria-hidden="true">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-orb orb-4"></div>
+    <div class="bg-orb orb-5"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- Top Navigation Bar / Multi-Page Session Bar -->
+    <nav class="top-nav">
+      <div class="nav-left">
+        <a href="index.html" class="brand-mini">FloWell</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link active">Dashboard</a>
+          <a href="dos-donts.html" class="nav-link">Do’s & Don’ts</a>
+          <a href="exercises.html" class="nav-link">Exercises</a>
+          <a href="nutrition.html" class="nav-link">Nutrition</a>
+          <a href="mira.html" class="nav-link">Chat with Mira</a>
+        </div>
+      </div>
+      <div class="user-status">
+        <div class="user-badge" id="navUserBadge" onclick="openAvatarModal()" title="Click to customize your avatar">
+          <span class="user-avatar-badge" id="userAvatarEmoji">🌸</span>
+          <span id="userNameText">Demo Guest</span>
+          <span class="avatar-edit-hint" aria-hidden="true">✎</span>
+        </div>
+        <button class="btn-nav-logout" onclick="handleLogout()">Log Out</button>
+      </div>
+    </nav>
+
+    <!-- Header Section (Clean, Permanent Title in Playfair Display) -->
+    <header>
+      <h1 class="flowell-title">FLOWELL</h1>
+      <p>Your personalized period wellness companion – powered by Mira 💬</p>
+    </header>
+
+    <!-- Period Tracker Section -->
+    <section class="container tracker">
+      <h2>🩸 Period Tracker & Predictions</h2>
+      <div class="tracker-form-grid">
+        <div class="input-group">
+          <label for="lastPeriod">Last Period Start Date</label>
+          <input type="date" id="lastPeriod" placeholder="Last Period Date" />
+        </div>
+        <div class="input-group">
+          <label for="cycleLength">Average Cycle Length (in days)</label>
+          <input type="number" id="cycleLength" placeholder="Cycle Length (in days)" min="15" max="60" value="28" />
+        </div>
+      </div>
+      
+      <button class="btn-predict" onclick="calculatePeriod()">Predict Next Period</button>
+      
+      <!-- Prediction Results Display -->
+      <div id="result"></div>
+
+      <!-- History Action Buttons -->
+      <div class="history-btns">
+        <button class="btn-save" onclick="saveHistory()">💾 Save Prediction</button>
+        <button class="btn-view" onclick="viewHistory()">📜 View History</button>
+        <button class="btn-clear" onclick="clearHistory()">🧹 Clear</button>
+      </div>
+
+      <!-- History List Output -->
+      <div id="history"></div>
+    </section>
+
+    <!-- Redesigned Menstrual Wellness Hub: 4 Clickable Navigation Cards -->
+    <section class="container wellness-hub-nav">
+      <h2>🌿 Menstrual Wellness Hub</h2>
+      <p class="section-intro">Explore dedicated wellness guides tailored for comfort, cramp alleviation, and body nourishment across every cycle phase.</p>
+      
+      <div class="nav-cards-grid">
+        <!-- Card 1: Do's & Don'ts -->
+        <a href="dos-donts.html" class="wellness-card">
+          <div class="wellness-card-icon">📋</div>
+          <div class="wellness-card-body">
+            <h3>Do’s & Don’ts</h3>
+            <p>28+ evidence-based hygiene routines, heat therapy, sleep tips, stress management, and medical red flags.</p>
+            <span class="card-link-badge">Explore Guide →</span>
+          </div>
+        </a>
+
+        <!-- Card 2: Exercise & Movement -->
+        <a href="exercises.html" class="wellness-card">
+          <div class="wellness-card-icon">🧘‍♀️</div>
+          <div class="wellness-card-body">
+            <h3>Exercise & Movement</h3>
+            <p>13+ gentle stretches, restorative yoga, easy walking, and category-filtered movement routines for cramp relief.</p>
+            <span class="card-link-badge">View Exercises →</span>
+          </div>
+        </a>
+
+        <!-- Card 3: Nutrition & Wellness -->
+        <a href="nutrition.html" class="wellness-card">
+          <div class="wellness-card-icon">🥗</div>
+          <div class="wellness-card-body">
+            <h3>Nutrition & Wellness</h3>
+            <p>16+ nutrient-rich foods, comforting Indian meals (dal, rajma, chaas), iron replenishment, and soothing teas.</p>
+            <span class="card-link-badge">Discover Foods →</span>
+          </div>
+        </a>
+
+        <!-- Card 4: Chat with Mira -->
+        <a href="mira.html" class="wellness-card">
+          <div class="wellness-card-icon">🤖</div>
+          <div class="wellness-card-body">
+            <h3>Chat with Mira</h3>
+            <p>Your caring wellness buddy is here to listen and share friendly guidance on cramps, mood, and daily self-care.</p>
+            <span class="card-link-badge">Start Chat →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Corrected Official Footer -->
+    <footer>Made with ♡ by Vedanshi | © 2026 FloWell</footer>
+  </div>
+
+  <!-- Avatar Customization Modal -->
+  <div class="avatar-modal-backdrop" id="avatarModal" onclick="handleModalBackdropClick(event)">
+    <div class="avatar-modal-card">
+      <h3>Personalize Your Avatar</h3>
+      <p>Select an emoji to represent you across FloWell:</p>
+      <div class="avatar-grid">
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌸')" title="Cherry Blossom">🌸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🦋')" title="Butterfly">🦋</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌷')" title="Tulip">🌷</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🐰')" title="Bunny">🐰</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌙')" title="Crescent Moon">🌙</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🎀')" title="Ribbon">🎀</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🧸')" title="Teddy Bear">🧸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('✨')" title="Sparkles">✨</button>
+      </div>
+      <button type="button" class="btn-close-modal" onclick="closeAvatarModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Enforce authentication on dashboard
+    requireAuth();
+  </script>
+  <script type="module" src="firebase-config.js"></script>
+</body>
+</html>

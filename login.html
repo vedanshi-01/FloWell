@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLOWELL - Login / Register</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <!-- Animated Background Elements: Floating Translucent Circles -->
+  <div class="bg-orb-container" aria-hidden="true">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-orb orb-4"></div>
+    <div class="bg-orb orb-5"></div>
+  </div>
+
+  <div class="login-wrapper">
+    <header class="login-header">
+      <h1 class="flowell-title">FLOWELL</h1>
+      <p>Login or Register to access your personalized FloWell experience</p>
+    </header>
+
+    <!-- Prototype Demo Disclaimer Banner -->
+    <div class="prototype-notice">
+      💡 <strong>Demo Prototype Authentication:</strong> Runs locally in browser storage for demonstration and testing. Passwords are converted locally into a one-way hash token (no plaintext passwords are stored). This demo authentication is not a secure production service.
+    </div>
+
+    <!-- Alert Box for Test Cases (Invalid Credentials / Please enter all fields) -->
+    <div id="authAlert" class="alert-box"></div>
+
+    <main class="auth-container">
+      <!-- Register Card -->
+      <section class="auth-card">
+        <h2>Register</h2>
+        <form id="registerForm" onsubmit="handleRegister(event)">
+          <div class="form-group">
+            <label for="regName">Name</label>
+            <input type="text" id="regName" placeholder="Enter your full name" autocomplete="name" required />
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" placeholder="Enter your email" autocomplete="username" required />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" placeholder="Create a demo password" autocomplete="new-password" required />
+          </div>
+
+          <!-- Personalized Avatar Selection (Optional) -->
+          <div class="form-group">
+            <div class="avatar-selection-label">
+              <label>Choose an Avatar</label>
+              <small>Optional • can be changed anytime</small>
+            </div>
+            <div class="avatar-options-grid">
+              <button type="button" class="avatar-choice-btn selected" data-avatar="🌸" onclick="selectRegisterAvatar('🌸')" title="Cherry Blossom">🌸</button>
+              <button type="button" class="avatar-choice-btn" data-avatar="🦋" onclick="selectRegisterAvatar('🦋')" title="Butterfly">🦋</button>
+              <button type="button" class="avatar-choice-btn" data-avatar="🌷" onclick="selectRegisterAvatar('🌷')" title="Tulip">🌷</button>
+              <button type="button" class="avatar-choice-btn" data-avatar="🐰" onclick="selectRegisterAvatar('🐰')" title="Bunny">🐰</button>
+              <button type="button" class="avatar-choice-btn" data-avatar="🌙" onclick="selectRegisterAvatar('🌙')" title="Crescent Moon">🌙</button>
+              <button type="button" class="avatar-choice-btn" data-avatar="🎀" onclick="selectRegisterAvatar('🎀')" title="Ribbon">🎀</button>
+              <button type="button" class="avatar-choice-btn" data-avatar="🧸" onclick="selectRegisterAvatar('🧸')" title="Teddy Bear">🧸</button>
+              <button type="button" class="avatar-choice-btn" data-avatar="✨" onclick="selectRegisterAvatar('✨')" title="Sparkles">✨</button>
+            </div>
+            <input type="hidden" id="regAvatar" value="🌸" />
+          </div>
+
+          <button type="submit" class="btn-auth">Register</button>
+        </form>
+      </section>
+
+      <!-- Login Card -->
+      <section class="auth-card">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email" autocomplete="username" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password" required />
+          </div>
+          <button type="submit" class="btn-auth">Login</button>
+        </form>
+        
+        <div class="divider">OR</div>
+
+        <!-- Quick One-Click Demo Mode -->
+        <button type="button" class="btn-auth btn-demo" onclick="handleDemoLogin()">
+          ✨ One-Click Demo Mode (Quick Test)
+        </button>
+      </section>
+    </main>
+
+    <footer class="login-footer">
+      Made with ♡ by Vedanshi | © 2026 FloWell
+    </footer>
+  </div>
+
+  <script src="auth.js"></script>
+  <script type="module" src="firebase-config.js"></script>
+</body>
+</html>

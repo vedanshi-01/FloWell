@@ -1,0 +1,417 @@
+/* ==========================================================================
+   FloWell: Login & Registration Styling
+   Palette: Baby Pink (#F6DCE5), Deep Plum (#49354F), Ivory (#FFFAFC), Dusty Rose (#C78FA5)
+   Design: Sophisticated Glassmorphism & Animated Floating Elements
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --baby-pink: #F6DCE5;
+  --deep-plum: #49354F;
+  --ivory: #FFFAFC;
+  --dusty-rose: #C78FA5;
+  --plum-dark: #35243A;
+  --plum-hover: #5B4463;
+  --text-dark: #2F2132;
+  --text-muted: #6C5970;
+  --white: #FFFFFF;
+  
+  --glass-bg: rgba(255, 250, 252, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-shadow: 0 14px 40px rgba(73, 53, 79, 0.12);
+  --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(130deg, #FFFAFC 0%, #F6DCE5 25%, #E8D7F1 50%, #EED1DC 75%, #FFFAFC 100%);
+  background-size: 240% 240%;
+  animation: bgGradientShift 18s ease-in-out infinite alternate;
+  padding: 30px 16px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes bgGradientShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 50% 100%; }
+}
+
+/* ==========================================================================
+   Animated Background: Floating Translucent Circles / Orbs
+   ========================================================================== */
+.bg-orb-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(32px);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Orb 1: Upper-left dusty rose & baby pink glowing circle */
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(199, 143, 165, 0.82) 0%, rgba(246, 220, 229, 0.55) 55%, transparent 75%);
+  top: 3%;
+  left: 4%;
+  opacity: 0.85;
+  animation: floatOrb1 14s ease-in-out infinite alternate;
+}
+
+/* Orb 2: Lower-right deep plum & lavender circle */
+.orb-2 {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(73, 53, 79, 0.40) 0%, rgba(212, 191, 217, 0.6) 45%, rgba(246, 220, 229, 0.35) 70%, transparent 85%);
+  bottom: 4%;
+  right: 3%;
+  opacity: 0.88;
+  animation: floatOrb2 18s ease-in-out infinite alternate;
+}
+
+/* Orb 3: Mid-right luminous baby pink & coral blush */
+.orb-3 {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(246, 220, 229, 0.95) 0%, rgba(199, 143, 165, 0.68) 55%, transparent 80%);
+  top: 35%;
+  right: 14%;
+  opacity: 0.82;
+  animation: floatOrb3 12s ease-in-out infinite alternate;
+}
+
+/* Orb 4: Lower-left warm dusty rose & soft plum */
+.orb-4 {
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(199, 143, 165, 0.75) 0%, rgba(73, 53, 79, 0.28) 50%, rgba(246, 220, 229, 0.45) 70%, transparent 85%);
+  bottom: 16%;
+  left: 8%;
+  opacity: 0.82;
+  animation: floatOrb4 16s ease-in-out infinite alternate;
+}
+
+/* Orb 5: Upper-mid lavender shimmer */
+.orb-5 {
+  width: 310px;
+  height: 310px;
+  background: radial-gradient(circle, rgba(232, 215, 241, 0.90) 0%, rgba(199, 143, 165, 0.55) 55%, transparent 80%);
+  top: 15%;
+  left: 45%;
+  opacity: 0.80;
+  animation: floatOrb5 21s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(110px, 80px, 0) scale(1.1); }
+  100% { transform: translate3d(50px, 140px, 0) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-100px, -90px, 0) scale(1.12); }
+  100% { transform: translate3d(-50px, -160px, 0) scale(0.92); }
+}
+
+@keyframes floatOrb3 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-85px, 110px, 0) scale(0.92); }
+  100% { transform: translate3d(-130px, 45px, 0) scale(1.08); }
+}
+
+@keyframes floatOrb4 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(95px, -65px, 0) scale(1.1); }
+  100% { transform: translate3d(40px, -115px, 0) scale(0.96); }
+}
+
+@keyframes floatOrb5 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-70px, 70px, 0) scale(1.08); }
+  100% { transform: translate3d(60px, 120px, 0) scale(0.92); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none !important;
+  }
+  .bg-orb {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+.login-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* Clean, Permanent FloWell Title with Playfair Display (No emojis) */
+.login-header h1,
+.login-header h1.flowell-title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--deep-plum);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9);
+}
+
+.login-header p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Prototype Demo Disclaimer Banner */
+.prototype-notice {
+  background: rgba(255, 250, 252, 0.9);
+  border: 1px solid var(--dusty-rose);
+  color: var(--deep-plum);
+  padding: 11px 16px;
+  border-radius: 14px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(73, 53, 79, 0.06);
+}
+
+.prototype-notice strong {
+  color: var(--plum-dark);
+}
+
+/* Auth Cards */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.auth-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 22px;
+  box-shadow: var(--glass-shadow);
+  padding: 28px 24px;
+  transition: var(--transition);
+}
+
+.auth-card:hover {
+  background: rgba(255, 250, 252, 0.88);
+  box-shadow: 0 16px 44px rgba(73, 53, 79, 0.16);
+  border-color: #ffffff;
+}
+
+.auth-card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--deep-plum);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--deep-plum);
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid var(--dusty-rose);
+  border-radius: 12px;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  background: #ffffff;
+  border-color: var(--deep-plum);
+  box-shadow: 0 0 0 3px rgba(73, 53, 79, 0.16);
+}
+
+/* Avatar Selection Grid in Registration */
+.avatar-selection-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar-selection-label small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.avatar-options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.avatar-choice-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(199, 143, 165, 0.4);
+  border-radius: 12px;
+  padding: 8px 4px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-choice-btn:hover {
+  background: var(--baby-pink);
+  border-color: var(--deep-plum);
+  transform: translateY(-2px);
+}
+
+.avatar-choice-btn.selected {
+  background: var(--deep-plum);
+  border-color: var(--deep-plum);
+  box-shadow: 0 4px 12px rgba(73, 53, 79, 0.25);
+}
+
+/* Primary Auth Button (Deep Plum) */
+.btn-auth {
+  width: 100%;
+  padding: 13px 18px;
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ivory);
+  background: linear-gradient(135deg, var(--deep-plum) 0%, var(--plum-dark) 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(73, 53, 79, 0.28);
+  transition: var(--transition);
+  margin-top: 6px;
+}
+
+.btn-auth:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(73, 53, 79, 0.38);
+  background: linear-gradient(135deg, var(--plum-hover) 0%, var(--deep-plum) 100%);
+}
+
+.btn-demo {
+  background: linear-gradient(135deg, var(--dusty-rose) 0%, #A86E85 100%);
+  margin-top: 10px;
+  box-shadow: 0 4px 14px rgba(199, 143, 165, 0.35);
+}
+
+.btn-demo:hover {
+  background: linear-gradient(135deg, #d49db2 0%, var(--dusty-rose) 100%);
+  box-shadow: 0 6px 18px rgba(199, 143, 165, 0.45);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 14px 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(199, 143, 165, 0.35);
+}
+
+.divider:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: .5em;
+}
+
+/* Alert messages */
+.alert-box {
+  display: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.alert-error {
+  background: rgba(73, 53, 79, 0.1);
+  color: var(--deep-plum);
+  border: 1px solid rgba(73, 53, 79, 0.3);
+}
+
+.alert-success {
+  background: rgba(78, 135, 91, 0.12);
+  color: #315c3b;
+  border: 1px solid rgba(78, 135, 91, 0.35);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--deep-plum);
+  font-weight: 500;
+}

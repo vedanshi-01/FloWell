@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLOWELL - Exercise & Movement for Menstrual Comfort</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated Background Elements: 5 Continuous Floating Translucent Orbs -->
+  <div class="bg-orb-container" aria-hidden="true">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-orb orb-4"></div>
+    <div class="bg-orb orb-5"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+      <div class="nav-left">
+        <a href="index.html" class="brand-mini">FloWell</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Dashboard</a>
+          <a href="dos-donts.html" class="nav-link">Do’s & Don’ts</a>
+          <a href="exercises.html" class="nav-link active">Exercises</a>
+          <a href="nutrition.html" class="nav-link">Nutrition</a>
+          <a href="mira.html" class="nav-link">Chat with Mira</a>
+        </div>
+      </div>
+      <div class="user-status">
+        <div class="user-badge" id="navUserBadge" onclick="openAvatarModal()" title="Click to customize your avatar">
+          <span class="user-avatar-badge" id="userAvatarEmoji">🌸</span>
+          <span id="userNameText">Demo Guest</span>
+          <span class="avatar-edit-hint" aria-hidden="true">✎</span>
+        </div>
+        <button class="btn-nav-logout" onclick="handleLogout()">Log Out</button>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+      <h1 class="flowell-title">FLOWELL</h1>
+      <p>Gentle movement, restorative yoga, and soothing stretches for your cycle</p>
+    </header>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <span class="page-hero-badge">Mindful Movement</span>
+      <h2>Exercise & Movement for Menstrual Comfort</h2>
+      <p>Movement during your period is entirely optional and should always honor how your body feels today. Gentle movement stimulates natural endorphin release, relaxes pelvic muscular tension, and lifts your mood.</p>
+      <div class="disclaimer-badge" style="margin-bottom: 14px;">
+        ⚠️ <strong>Comfort Guidance:</strong> These movement routines are designed for comfort and relaxation. They do not cure medical conditions or guarantee total cramp elimination. Stop immediately if you experience pain or dizziness, and rest whenever your body asks for it.
+      </div>
+      <div>
+        <a href="index.html" class="back-home-link">← Back to Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <div class="filter-bar" id="exerciseFilters">
+      <button type="button" class="filter-pill active" onclick="filterExercises('all')">All Movements (13)</button>
+      <button type="button" class="filter-pill" onclick="filterExercises('stretching')">Gentle Stretching</button>
+      <button type="button" class="filter-pill" onclick="filterExercises('yoga')">Yoga & Mobility</button>
+      <button type="button" class="filter-pill" onclick="filterExercises('low-impact')">Low-Impact Movement</button>
+      <button type="button" class="filter-pill" onclick="filterExercises('relaxation')">Relaxation & Recovery</button>
+    </div>
+
+    <!-- Main Content Container: 13 Comprehensive Exercise Cards -->
+    <main class="container">
+      <div class="items-grid" id="exerciseGrid">
+
+        <!-- 1. Child's Pose -->
+        <article class="item-card" data-category="yoga">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Child’s Pose (Balasana)</h3>
+            </div>
+            <span class="category-tag">Yoga & Mobility</span>
+          </div>
+          <p class="item-desc">A deeply calming restorative posture that gently releases spinal compression, decompresses the lumbar spine, and relaxes the pelvic floor.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Kneel on your mat with knees hip-distance apart and big toes touching. Fold your torso forward between your thighs, resting your forehead softly on the mat. Extend arms forward or rest them alongside your shins.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 2 to 3 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Place a folded pillow or bolster between your thighs and chest for soothing abdominal support.</div>
+        </article>
+
+        <!-- 2. Cat-Cow Stretch -->
+        <article class="item-card" data-category="yoga">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Cat-Cow Stretch (Marjaryasana-Bitilasana)</h3>
+            </div>
+            <span class="category-tag">Yoga & Mobility</span>
+          </div>
+          <p class="item-desc">Rhythmic spinal flexion and extension synchronized with breathing that gently massages abdominal organs and eases back stiffness.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Start on all fours with wrists below shoulders and knees below hips. Inhale as you drop your belly toward the mat, lifting your collarbones and gaze (Cow). Exhale as you round your spine, tucking your chin toward your chest (Cat).
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 8 to 10 slow breath cycles</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Keep the flow fluid and gentle; avoid forcing your spine into extreme extension if your belly feels tender.</div>
+        </article>
+
+        <!-- 3. Supine Spinal Twist -->
+        <article class="item-card" data-category="stretching">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Supine Spinal Twist (Supta Matsyendrasana)</h3>
+            </div>
+            <span class="category-tag">Gentle Stretching</span>
+          </div>
+          <p class="item-desc">A deeply relaxing reclined twist that releases tight glutes, outer hips, lower back tightness, and abdominal pressure.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Lie on your back with arms outstretched in a T-shape. Hug your right knee into your chest, then guide it across your body to the floor on your left side while keeping both shoulder blades grounded. Repeat on the left side.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 60 to 90 seconds per side</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Rest your bent knee on a soft cushion so your back can relax without pulling or straining.</div>
+        </article>
+
+        <!-- 4. Reclining Butterfly Stretch -->
+        <article class="item-card" data-category="stretching">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Reclining Butterfly (Supta Baddha Konasana)</h3>
+            </div>
+            <span class="category-tag">Gentle Stretching</span>
+          </div>
+          <p class="item-desc">A restorative groin and pelvic opener that stimulates healthy circulation to pelvic organs and eases uterine muscle guarding.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Lie comfortably on your back. Press the soles of your feet together and let your knees fall open naturally toward the sides like butterfly wings. Rest your palms on your lower abdomen.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 3 to 5 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Place rolled towels or blocks under your outer thighs to avoid overstretching tight adductors.</div>
+        </article>
+
+        <!-- 5. Gentle Pelvic Tilts -->
+        <article class="item-card" data-category="stretching">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Gentle Pelvic Tilts</h3>
+            </div>
+            <span class="category-tag">Gentle Stretching</span>
+          </div>
+          <p class="item-desc">Subtle micro-movements of the pelvis that mobilize the lumbar spine, relieve sacral pressure, and stimulate gentle blood flow.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Lie on your back with knees bent and feet flat on the floor hip-width apart. Exhale and gently flatten your lower back against the mat by curling your pelvis up slightly. Inhale and release back to neutral.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 10 to 12 gentle repetitions</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Keep movements small and smooth; think of it as a rhythmic wave rather than a workout crunch.</div>
+        </article>
+
+        <!-- 6. Legs-Up-The-Wall Pose -->
+        <article class="item-card" data-category="relaxation">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Legs-Up-The-Wall (Viparita Karani)</h3>
+            </div>
+            <span class="category-tag">Relaxation & Recovery</span>
+          </div>
+          <p class="item-desc">A gentle restorative inversion that drains pooled venous blood from tired legs, eases abdominal cramps, and soothes the central nervous system.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Sit sideways against an empty wall. Swivel your legs up the wall as you lower your shoulders and head to the floor. Open your arms out wide with palms facing up and close your eyes.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 5 to 10 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Place a folded towel or thin cushion under your sacrum for elevated comfort.</div>
+        </article>
+
+        <!-- 7. Breezy Outdoor Walking -->
+        <article class="item-card" data-category="low-impact">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Breezy Outdoor Walking</h3>
+            </div>
+            <span class="category-tag">Low-Impact Movement</span>
+          </div>
+          <p class="item-desc">Low-intensity cardiovascular exercise that gently elevates heart rate, circulates oxygenated blood, and triggers feel-good endorphins.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Wear comfortable supportive sneakers. Take an easy, unhurried walk through a quiet park or neighborhood. Maintain an easy conversational pace where you can comfortably breathe through your nose.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 15 to 25 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Choose flat, shaded pathways. If you feel tired, turn back early—fresh air is beneficial even in short doses.</div>
+        </article>
+
+        <!-- 8. Easy Stationary Cycling -->
+        <article class="item-card" data-category="low-impact">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Easy Stationary Cycling</h3>
+            </div>
+            <span class="category-tag">Low-Impact Movement</span>
+          </div>
+          <p class="item-desc">Zero-impact rhythmic pedaling that keeps pelvic and leg muscles active without joint impact or heavy abdominal compression.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Set a stationary cycle to minimum or low resistance. Keep your torso upright and pedal smoothly at an easy, fluid tempo. Keep knees aligned forward.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 10 to 15 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Avoid spin class sprints, standing climbs, or high resistance gears. Keep the session light and breezy.</div>
+        </article>
+
+        <!-- 9. Gentle Hip Mobility Circles -->
+        <article class="item-card" data-category="yoga">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Gentle Hip Mobility Circles</h3>
+            </div>
+            <span class="category-tag">Yoga & Mobility</span>
+          </div>
+          <p class="item-desc">Standing pelvic rotations that lubricate the hip acetabulum, relieve lumbar stiffness, and ease stagnation in the pelvic cavity.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Stand with feet slightly wider than shoulder-width and hands on your hips. Keep knees soft and gently trace wide, slow circles with your pelvis as if spinning a slow hula-hoop.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 8 clockwise & 8 counter-clockwise</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Breathe deeply throughout; let the movement feel fluid and relaxing rather than rigid.</div>
+        </article>
+
+        <!-- 10. Low-Impact Mindful Dancing -->
+        <article class="item-card" data-category="low-impact">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Low-Impact Mindful Dancing</h3>
+            </div>
+            <span class="category-tag">Low-Impact Movement</span>
+          </div>
+          <p class="item-desc">Gentle rhythmic swaying to uplifting, soothing music that shakes off muscular sluggishness and elevates emotional well-being.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Put on your favourite mellow tracks. In your living room, softly sway your hips, take gentle side steps, and float your arms softly without jumping or sudden turns.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 10 to 15 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Dance barefoot or in cozy socks on a soft carpet; stop as soon as fatigue starts to set in.</div>
+        </article>
+
+        <!-- 11. Deep Diaphragmatic Breathing -->
+        <article class="item-card" data-category="relaxation">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Deep Diaphragmatic Breathing</h3>
+            </div>
+            <span class="category-tag">Relaxation & Recovery</span>
+          </div>
+          <p class="item-desc">Conscious abdominal breathing that stimulates the vagus nerve, slows the heart rate, and lowers neuromuscular cramp distress.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Sit or recline comfortably. Place one hand on your chest and the other on your belly. Inhale deeply through your nose for 4 counts, feeling your belly expand gently. Exhale softly through pursed lips for 6 counts.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 5 to 8 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Focus on making exhalations longer than inhalations to trigger full-body parasympathetic calm.</div>
+        </article>
+
+        <!-- 12. Seated Forward Fold with Pillow -->
+        <article class="item-card" data-category="stretching">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Supported Forward Fold (Paschimottanasana)</h3>
+            </div>
+            <span class="category-tag">Gentle Stretching</span>
+          </div>
+          <p class="item-desc">A restorative seated fold that lengthens tight hamstrings, relaxes the posterior kinetic chain, and quiets an overstimulated nervous system.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Sit on the mat with legs extended straight forward. Stack two plump pillows over your thighs. Gently hinge at your hips and fold forward, resting your torso and head on the pillows with arms relaxed.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 2 to 4 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Keep a slight bend in your knees so there is no strain behind your knees or in your lower back.</div>
+        </article>
+
+        <!-- 13. Side-Lying Restorative Savasana -->
+        <article class="item-card" data-category="relaxation">
+          <div class="item-card-header">
+            <div class="item-title-group">
+              <h3>Side-Lying Restorative Savasana</h3>
+            </div>
+            <span class="category-tag">Relaxation & Recovery</span>
+          </div>
+          <p class="item-desc">The ultimate recovery posture that unweights the pelvic cavity, optimizes circulation through the inferior vena cava, and invites total physical surrender.</p>
+          <div class="item-instructions">
+            <strong>How to do it:</strong>
+            Lie on your left side with knees softly bent. Place a pillow between your knees to keep your pelvis aligned, and rest your head on a comfortable pillow. Rest one arm across your chest and close your eyes.
+          </div>
+          <div class="meta-pill-row">
+            <span class="duration-pill">⏱️ 8 to 15 minutes</span>
+          </div>
+          <div class="comfort-guidance">✨ <strong>Comfort Guidance:</strong> Cover yourself with a warm cozy blanket to keep your core warm and completely relaxed.</div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Corrected Official Footer -->
+    <footer>Made with ♡ by Vedanshi | © 2026 FloWell</footer>
+  </div>
+
+  <!-- Avatar Customization Modal -->
+  <div class="avatar-modal-backdrop" id="avatarModal" onclick="handleModalBackdropClick(event)">
+    <div class="avatar-modal-card">
+      <h3>Personalize Your Avatar</h3>
+      <p>Select an emoji to represent you across FloWell:</p>
+      <div class="avatar-grid">
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌸')" title="Cherry Blossom">🌸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🦋')" title="Butterfly">🦋</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌷')" title="Tulip">🌷</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🐰')" title="Bunny">🐰</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌙')" title="Crescent Moon">🌙</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🎀')" title="Ribbon">🎀</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🧸')" title="Teddy Bear">🧸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('✨')" title="Sparkles">✨</button>
+      </div>
+      <button type="button" class="btn-close-modal" onclick="closeAvatarModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script type="module" src="firebase-config.js"></script>
+  <script>
+    requireAuth();
+
+    // Vanilla JavaScript Category Filtering Logic
+    function filterExercises(category) {
+      // Update active pill button
+      const pills = document.querySelectorAll("#exerciseFilters .filter-pill");
+      pills.forEach(pill => pill.classList.remove("active"));
+      event.target.classList.add("active");
+
+      // Filter card visibility
+      const cards = document.querySelectorAll("#exerciseGrid .item-card");
+      cards.forEach(card => {
+        if (category === "all" || card.getAttribute("data-category") === category) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

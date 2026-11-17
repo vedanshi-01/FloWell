@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLOWELL - Menstrual Health Do’s & Don’ts</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated Background Elements: 5 Continuous Floating Translucent Orbs -->
+  <div class="bg-orb-container" aria-hidden="true">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-orb orb-4"></div>
+    <div class="bg-orb orb-5"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+      <div class="nav-left">
+        <a href="index.html" class="brand-mini">FloWell</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Dashboard</a>
+          <a href="dos-donts.html" class="nav-link active">Do’s & Don’ts</a>
+          <a href="exercises.html" class="nav-link">Exercises</a>
+          <a href="nutrition.html" class="nav-link">Nutrition</a>
+          <a href="mira.html" class="nav-link">Chat with Mira</a>
+        </div>
+      </div>
+      <div class="user-status">
+        <div class="user-badge" id="navUserBadge" onclick="openAvatarModal()" title="Click to customize your avatar">
+          <span class="user-avatar-badge" id="userAvatarEmoji">🌸</span>
+          <span id="userNameText">Demo Guest</span>
+          <span class="avatar-edit-hint" aria-hidden="true">✎</span>
+        </div>
+        <button class="btn-nav-logout" onclick="handleLogout()">Log Out</button>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+      <h1 class="flowell-title">FLOWELL</h1>
+      <p>Evidence-based habits, comfort care, and scientific hygiene practices</p>
+    </header>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <span class="page-hero-badge">Clinical & Practical Guidance</span>
+      <h2>Menstrual Health Do’s & Don’ts</h2>
+      <p>Caring for your body during your cycle should be gentle, empowering, and grounded in medical facts. Here is a clear guide on healthy supportive habits and common practices to avoid.</p>
+      <a href="index.html" class="back-home-link">← Back to Dashboard</a>
+    </div>
+
+    <!-- Main Content Container: Two Visually Distinct Columns -->
+    <main class="container">
+      <div class="dos-donts-grid">
+        
+        <!-- COLUMN 1: THINGS TO DO (14 Medically Sensible Recommendations) -->
+        <section class="dos-column">
+          <div class="column-header">
+            <h3>✅ Things to Do</h3>
+          </div>
+          <div class="column-cards-list">
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">💧</span>
+                <h4 class="rec-title">Hydrate Consistently (2–3 Liters Daily)</h4>
+              </div>
+              <p class="rec-desc">Drinking adequate water prevents fluid retention and relieves abdominal bloating and cyclical dehydration headaches.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Sip room-temperature water or warm herbal infusions steadily throughout the day.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">⏱️</span>
+                <h4 class="rec-title">Change Menstrual Products Regularly</h4>
+              </div>
+              <p class="rec-desc">Replace sanitary pads or tampons every 4 to 8 hours, and empty menstrual cups every 8 to 12 hours, regardless of how light the flow seems.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Setting subtle calendar alerts on busy workdays ensures timely freshening.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🚿</span>
+                <h4 class="rec-title">Wash Gently with Plain Warm Water</h4>
+              </div>
+              <p class="rec-desc">Cleanse only the external vulva from front to back using plain warm water. The internal vagina maintains its own healthy acidic flora.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Avoid scented soaps, deodorants, or bubble baths near your intimate areas.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🔥</span>
+                <h4 class="rec-title">Apply Soothing Heat for Cramps</h4>
+              </div>
+              <p class="rec-desc">Placing a heating pad or hot water bottle (approx. 40°C) over the lower abdomen stimulates vasodilation and relaxes uterine smooth muscle.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> 15–20 minutes of gentle heat therapy can match the relief of mild over-the-counter analgesics.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">😴</span>
+                <h4 class="rec-title">Prioritize 7 to 9 Hours of Sleep</h4>
+              </div>
+              <p class="rec-desc">Quality restorative sleep allows your nervous system to regulate pain thresholds, lower inflammatory prostaglandins, and stabilize moods.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Sleeping on your side in a gentle fetal tuck with a cushion between knees eases pelvic tension.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🚶‍♀️</span>
+                <h4 class="rec-title">Engage in Gentle, Low-Impact Movement</h4>
+              </div>
+              <p class="rec-desc">Light walking, restorative stretching, and gentle yoga release beta-endorphins—your body’s natural painkillers—without exhausting you.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> A 15-minute relaxed stroll in fresh air clears brain fog and relieves pelvic congestion.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🍲</span>
+                <h4 class="rec-title">Eat Regular, Balanced Meals</h4>
+              </div>
+              <p class="rec-desc">Fueling your body with complex carbs, protein, and dietary fiber prevents hypoglycemic dips that exacerbate PMS irritability and fatigue.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Incorporate warm dal, oats, curd, or steamed vegetables rather than skipping breakfast.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🥬</span>
+                <h4 class="rec-title">Replenish Iron and Magnesium</h4>
+              </div>
+              <p class="rec-desc">Menstrual blood loss depletes iron stores. Consuming lentils, leafy greens, seeds, and dark chocolate restores stamina and eases spasms.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Squeeze fresh lemon juice over plant-based iron foods to quadruple iron absorption via Vitamin C.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">📱</span>
+                <h4 class="rec-title">Track Symptoms & Cycle Milestones</h4>
+              </div>
+              <p class="rec-desc">Recording start dates, duration, cramp intensity, and emotional changes helps you recognize patterns and predict future cycles accurately.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> FloWell’s tracker and history logger makes spotting cycle variations simple and private.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🩲</span>
+                <h4 class="rec-title">Wear Breathable 100% Cotton Underwear</h4>
+              </div>
+              <p class="rec-desc">Breathable natural cotton fabric permits optimal air circulation, preventing heat and sweat buildup that can invite yeast overgrowth.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Choose loose, seamless cotton cuts over tight synthetic nylon during active bleeding days.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🧘‍♀️</span>
+                <h4 class="rec-title">Practice Mindful Stress Reduction</h4>
+              </div>
+              <p class="rec-desc">Elevated psychological stress triggers cortisol release, which can disrupt luteinizing hormone signals and amplify cramp severity.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Try 4-7-8 breathing: inhale for 4 seconds, hold for 7 seconds, and exhale slowly for 8 seconds.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">👜</span>
+                <h4 class="rec-title">Pack an Emergency Period Care Kit</h4>
+              </div>
+              <p class="rec-desc">Carrying a small pouch with extra pads, liners, pain relief, and wet wipes provides peace of mind whenever your period starts unexpectedly.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Keep one prepared pouch in your work backpack and another in your travel tote.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🛀</span>
+                <h4 class="rec-title">Take Warm Showers or Baths</h4>
+              </div>
+              <p class="rec-desc">Warm water cascading over your back and abdomen stimulates peripheral blood flow, relaxes stiff muscles, and enhances overall comfort.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> A warm evening shower before bed encourages deeper, more restful sleep.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🩺</span>
+                <h4 class="rec-title">Consult a Doctor for Severe Symptoms</h4>
+              </div>
+              <p class="rec-desc">Schedule a gynecological consultation if you experience bleeding that soaks through a pad every hour or pain that disrupts daily living.</p>
+              <div class="practical-tip">💡 <strong>Practical Tip:</strong> Document dates and symptom severity to share an accurate timeline with your physician.</div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- COLUMN 2: THINGS TO AVOID (14 Medically Sound Warnings & Myth Busting) -->
+        <section class="donts-column">
+          <div class="column-header">
+            <h3>❌ Things to Avoid</h3>
+          </div>
+          <div class="column-cards-list">
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🚫</span>
+                <h4 class="rec-title">Don’t Use Vaginal Douches or Scented Sprays</h4>
+              </div>
+              <p class="rec-desc">Internal douching strips away the protective acidic microbiome, drastically increasing susceptibility to bacterial vaginosis and yeast infections.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> The vagina is naturally self-cleansing; only wash external skin with plain water.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">⚠️</span>
+                <h4 class="rec-title">Don’t Leave Tampons in Beyond 8 Hours</h4>
+              </div>
+              <p class="rec-desc">Leaving tampons inserted for excessive durations fosters bacterial colonization, significantly raising the risk of Toxic Shock Syndrome (TSS).</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Switch to pads before going to sleep overnight if you sleep longer than 7–8 hours.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🙅‍♀️</span>
+                <h4 class="rec-title">Don’t Normalize Debilitating, Bed-Ridden Pain</h4>
+              </div>
+              <p class="rec-desc">Pain that makes you vomit, faint, or miss school/work is not "just a normal period." It may indicate endometriosis, adenomyosis, or fibroids.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> You deserve effective medical management; never let anyone dismiss severe agony.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🍽️</span>
+                <h4 class="rec-title">Don’t Skip Meals Due to Nausea or Cramps</h4>
+              </div>
+              <p class="rec-desc">Prolonged fasting causes rapid blood sugar drops, exacerbating nausea, fatigue, headache throbbing, and emotional irritability.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Even small, bland snacks like plain toast, banana slices, or khichdi help stabilize energy.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">☕</span>
+                <h4 class="rec-title">Don’t Overconsume Excessive Caffeine</h4>
+              </div>
+              <p class="rec-desc">High doses of caffeine act as a vasoconstrictor, narrowing blood vessels in the pelvis and potentially intensifying uterine contractions.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Swap that 3rd or 4th cup of espresso for soothing chamomile, ginger, or peppermint tea.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🧂</span>
+                <h4 class="rec-title">Don’t Binge on Ultra-Salty Processed Snacks</h4>
+              </div>
+              <p class="rec-desc">Excess dietary sodium prompts water retention in extracellular tissues, exacerbating heavy abdominal bloating and painful breast tenderness.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Opt for roasted unsalted nuts, fresh fruits, or light home-roasted makhana instead.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🏋️‍♀️</span>
+                <h4 class="rec-title">Don’t Force Exhausting High-Intensity Workouts</h4>
+              </div>
+              <p class="rec-desc">Forcing heavy deadlifts, maximum sprints, or extreme HIIT during heavy bleeding days stresses adrenal glands and heightens fatigue.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Exercise is optional and should adapt to comfort; honoring your need to rest is healthy.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🚿</span>
+                <h4 class="rec-title">Don’t Believe Bathing or Showering is Unsafe</h4>
+              </div>
+              <p class="rec-desc">Old myths claiming you should not bathe or wash hair during your period are completely false. Warm water is safe, hygienic, and comforting.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Cleanliness prevents odor and bacterial build-up while soothing aching muscles.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🚽</span>
+                <h4 class="rec-title">Don’t Flush Menstrual Products in the Toilet</h4>
+              </div>
+              <p class="rec-desc">Pads, tampons, and wipes do not disintegrate like toilet paper. Flushing them causes severe plumbing blockages and environmental pollution.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Wrap used products securely in newspaper or biodegradable bags and discard in trash bins.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">💊</span>
+                <h4 class="rec-title">Don’t Misuse Unprescribed Pain Medications</h4>
+              </div>
+              <p class="rec-desc">Never exceed recommended dosages or take NSAIDs on an empty stomach, as this can irritate gastric lining and trigger heartburn or ulcers.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Always take anti-inflammatory medications with food or milk, as directed by a healthcare professional.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🩲</span>
+                <h4 class="rec-title">Don’t Wear Damp Products to "Save Them"</h4>
+              </div>
+              <p class="rec-desc">Wearing a single pad all day because "flow is light" traps sweat, moisture, and bacteria against the skin, inviting chafing and rashes.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Change pads at least 3–4 times daily, regardless of the discharge volume.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🤫</span>
+                <h4 class="rec-title">Don’t Suffer in Silence or Feel Ashamed</h4>
+              </div>
+              <p class="rec-desc">Menstruation is a natural, vital sign of reproductive health. There is zero reason to feel embarrassed, unclean, or isolated.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Communicating your needs with partners, friends, and doctors promotes well-being and empathy.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">🧪</span>
+                <h4 class="rec-title">Don’t Rely on Unverified "Period Hack" Tonics</h4>
+              </div>
+              <p class="rec-desc">Beware of viral social media recipes claiming to instantly stop bleeding, induce periods, or cure cysts with unregulated concoctions.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Consuming unverified herbs in large doses can cause gastric poisoning or dangerous hormonal chaos.</div>
+            </article>
+
+            <article class="recommendation-card">
+              <div class="rec-header">
+                <span class="rec-icon">📅</span>
+                <h4 class="rec-title">Don’t Ignore Prolonged Irregular Cycles</h4>
+              </div>
+              <p class="rec-desc">If your period consistently arrives faster than 21 days, vanishes for 90+ days (not pregnant), or bleeds for 10+ days, consult a doctor.</p>
+              <div class="practical-tip">⚠️ <strong>Why It Matters:</strong> Early diagnosis of conditions like PCOS or thyroid imbalance ensures timely, effective care.</div>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Corrected Official Footer -->
+    <footer>Made with ♡ by Vedanshi | © 2026 FloWell</footer>
+  </div>
+
+  <!-- Avatar Customization Modal -->
+  <div class="avatar-modal-backdrop" id="avatarModal" onclick="handleModalBackdropClick(event)">
+    <div class="avatar-modal-card">
+      <h3>Personalize Your Avatar</h3>
+      <p>Select an emoji to represent you across FloWell:</p>
+      <div class="avatar-grid">
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌸')" title="Cherry Blossom">🌸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🦋')" title="Butterfly">🦋</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌷')" title="Tulip">🌷</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🐰')" title="Bunny">🐰</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🌙')" title="Crescent Moon">🌙</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🎀')" title="Ribbon">🎀</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('🧸')" title="Teddy Bear">🧸</button>
+        <button type="button" class="avatar-item-btn" onclick="selectDashboardAvatar('✨')" title="Sparkles">✨</button>
+      </div>
+      <button type="button" class="btn-close-modal" onclick="closeAvatarModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script>
+    requireAuth();
+  </script>
+  <script type="module" src="firebase-config.js"></script>
+</body>
+</html>
